@@ -1,4 +1,4 @@
-**Movie Recommender**
+# Movie Recommender
 
 **Overview**
 
