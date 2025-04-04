@@ -1,33 +1,59 @@
-# Movie Recommender
+# 🎬 Plot2Match - Content-Based Movie Recommendation System
 
-## **Overview**
+A content-based movie recommendation system that uses **Sentence Transformers** to understand semantic similarity between movie plot summaries. The system computes embeddings and recommends movies based on how similar their plots are. Built with **Python**, **Flask**, and **NLP techniques**.
 
-This is a Movie Recommender System built using BERT (Bidirectional Encoder Representations from Transformers) and cosine similarity. The system analyzes movie descriptions and recommends similar movies based on textual content.
+## 🔍 Overview
 
-## **Features**
+In an age of overwhelming content, helping users discover movies tailored to their preferences is both valuable and challenging. This project aims to address that by leveraging Natural Language Processing (NLP) and sentence embeddings to recommend movies based purely on their plot descriptions—no ratings, genres, or user data required.
 
-Utilizes BERT embeddings to generate meaningful representations of movie descriptions.
+Using pre-trained Sentence Transformers, the system converts movie plots into dense vector representations that capture the semantic essence of the content. By applying cosine similarity, it identifies and recommends movies with similar narrative structures and themes.
 
-Computes cosine similarity to find and recommend similar movies.
+The goal behind this project was to explore how powerful transformer-based models can be when applied to real-world recommendation problems. It also served as a way to combine ML concepts, NLP, and software development into a full-stack, end-to-end application.
 
-Efficient and scalable approach for content-based recommendations.
+A lightweight Flask web interface wraps the model into an interactive tool where users can type in a movie title and receive a list of semantically similar movies in return.
+## 🚀 Features
 
-## **Tech Stack**
-Python
+- 📚 **NLP with Sentence Transformers** – Captures deep semantic meaning of movie plots.
+- 🧠 **Content-Based Filtering** – No user ratings or metadata required.
+- ⚡ **Cosine Similarity** – Efficient and scalable similarity computation.
+- 🌐 **Flask Web App** – User-friendly web interface to interact with the model.
+- 🛠️ **Modular Codebase** – Clean, reusable code with clear separation of logic.
 
-Transformers (Hugging Face BERT)
+## 📊 Tech Stack
 
-Scikit-learn (for cosine similarity computation)
+- **Python**
+- **Sentence Transformers**
+- **Flask**
+- **Pandas**
+- **Sklearn** (for cosine similarity)
 
-Pandas & NumPy (for data handling)
+## 📁 Project Structure
 
-# How It Works
 
-Preprocessing: Movie descriptions are tokenized and converted into embeddings using a pre-trained BERT model.
+## 🧪 How It Works
 
-Embedding Calculation: Each movie’s description is converted into a numerical representation.
+1. **Preprocessing:** Load the movie dataset and clean plot summaries.
+2. **Embedding:** Generate sentence embeddings using a pre-trained Sentence Transformer model.
+3. **Similarity:** Compute cosine similarity between the input movie plot and others.
+4. **Recommendation:** Return the top-N most similar movies.
 
-Similarity Computation: Cosine similarity is used to measure how close two movies are in the embedding space.
+## 🖥️ Running Locally
 
-Recommendation: The system suggests movies with the highest similarity scores.
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/movie-recommender.git
+cd movie-recommender
+
+# 2. Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Run the Flask app
+python app.py
+
+Then open http://localhost:5000 in your browser.
+
 
